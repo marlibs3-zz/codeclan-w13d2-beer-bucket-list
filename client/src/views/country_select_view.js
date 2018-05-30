@@ -7,6 +7,11 @@ const CountrySelectView = function (selectElement) {
 CountrySelectView.prototype.bindEvents = function () {
   PubSub.subscribe('Countries:data-loaded', (evt) => {
     this.populateSelect(evt.detail);
+
+    this.selectElement.addEventListener('change', (evt) => {
+      PubSub.publish('CountrySelectView:selected-country', evt.target.value)
+    });
+
   });
 };
 
@@ -19,7 +24,7 @@ CountrySelectView.prototype.populateSelect = function (data) {
 CountrySelectView.prototype.createOption = function (country) {
   const option = document.createElement('option');
   option.textContent = country.name;
-  option.value = country.id;
+  option.value = country._id;
   this.selectElement.appendChild(option);
 };
 

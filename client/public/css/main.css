@@ -1,0 +1,25 @@
+body {
+  background-image: url('../../images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Marvel', sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: 'Coming Soon', cursive;
+  font-size: 72px;
+  text-align: center;
+}
+
+button {
+  font-family: 'Coming Soon', cursive;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 7px;
+  padding-bottom: 5px;
+}

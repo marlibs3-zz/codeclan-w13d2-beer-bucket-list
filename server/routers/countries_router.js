@@ -11,6 +11,13 @@ const countriesRouter = function (countriesCollection) {
     .then((docs) => res.json(docs))
   });
 
+  router.get('/:id', (req, res) => {
+    const id = req.params.id;
+    countriesCollection
+      .findOne({ _id: ObjectID(id) })
+      .then((docs) => res.json(docs));
+  });
+
   return router;
 
 };
